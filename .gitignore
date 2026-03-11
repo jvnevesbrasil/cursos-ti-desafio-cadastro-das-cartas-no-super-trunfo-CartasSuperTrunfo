@@ -1,0 +1,15 @@
+# --- IDEs e Editores ---
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+
+# --- C / C++ ---
+*.o
+*.obj
+*.exe
+*.out
+build/
+
+# --- Arquivos de ambiente ---
+.env
