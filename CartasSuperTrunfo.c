@@ -2,7 +2,7 @@
 
 int main() {
     // Valores hardcoded para facilitar os testes
-    int populacao = 12325000, populacao2 = 6748000;
+    unsigned long int populacao = 12325000, populacao2 = 6748000;
     int pontosTuristicos = 50, pontosTuristicos2 = 30;
     float area = 1521.11, area2 = 1200.25;
     float pib = 699.28, pib2 = 300.50;   
@@ -13,6 +13,8 @@ int main() {
     
     float densidadePopulacional, densidadePopulacional2;
     float pibPerCapita, pibPerCapita2;
+
+    float superPoder, superPoder2;
     
     /* === ÁREA COMENTADA PARA NÃO PRECISAR DIGITAR ===
     
@@ -84,6 +86,10 @@ int main() {
     pibPerCapita2 = (pib2 * 1000000000.0) / populacao2;
     densidadePopulacional2 = (float) populacao2 / area2;
 
+    //soma populacao, area, pib, pib percapita e densidade populacional invertida
+    superPoder = (float) populacao + area + (float) pontosTuristicos + pib + pibPerCapita + (1 / densidadePopulacional);
+    superPoder2 = (float) populacao2 + area2 + (float) pontosTuristicos2 + pib2 + pibPerCapita2 + (1 / densidadePopulacional2);
+
     // Exibição dos Dados das Cartas:
     printf("--------------------\n\n");
     printf("Carta 1: \n");
@@ -110,6 +116,52 @@ int main() {
     // Adicionei os printf que faltavam aqui na exibição 2:
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);      
     printf("PIB per Capita: %.2f reais\n\n", pibPerCapita2);
+
+    printf("--------------------\n\n");
+
+    //Comparaçoes entre as cartas
+if (populacao > populacao2){
+        printf("População: %s venceu!\n", nomeCidade);
+    } else{
+        printf("População: %s venceu!\n", nomeCidade2);
+    }
+
+    if (area > area2){
+        printf("Área: %s venceu!\n", nomeCidade);
+    } else{
+        printf("Área: %s venceu!\n", nomeCidade2);
+    }
+
+    // CORRIGIDO: Estava pib2 > pib2
+    if (pib > pib2){
+        printf("PIB: %s venceu!\n", nomeCidade);
+    } else{
+        printf("PIB: %s venceu!\n", nomeCidade2);
+    }
+
+    if (pontosTuristicos > pontosTuristicos2){
+        printf("Pontos Turísticos: %s venceu!\n", nomeCidade);
+    } else{
+        printf("Pontos Turísticos: %s venceu!\n", nomeCidade2);
+    }
+    
+    if (densidadePopulacional < densidadePopulacional2){
+        printf("Densidade Populacional: %s venceu!\n", nomeCidade);
+    } else{
+        printf("Densidade Populacional: %s venceu!\n", nomeCidade2);
+    }
+
+    if (pibPerCapita > pibPerCapita2){
+        printf("PIB per Capita: %s venceu!\n", nomeCidade);
+    } else{
+        printf("PIB per Capita: %s venceu!\n", nomeCidade2);
+    }
+
+    if (superPoder > superPoder2){
+        printf("Super Poder: %s venceu!\n", nomeCidade);
+    } else{
+        printf("Super Poder: %s venceu!\n", nomeCidade2);
+    }
 
     return 0;
 }
